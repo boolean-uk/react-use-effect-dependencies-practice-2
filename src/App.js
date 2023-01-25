@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     if (!dataType) return;
 
-    fetch(`https://swapi-new.herokuapp.com/api/${dataType}/`)
+    fetch(`https://swapi.dev/${dataType}/`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [dataType]);
