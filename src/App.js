@@ -12,10 +12,13 @@ export default function App() {
 
   useEffect(() => {
     if (!dataType) return;
-
-    fetch(`https://swapi.dev/${dataType}/`)
+    console.log("Sending data fetch for", dataType);
+    fetch(`https://swapi.dev/api/${dataType}/`)
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        console.log("Received data for", dataType);
+        setData(data);
+      });
   }, [dataType]);
 
   return (
